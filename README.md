@@ -40,9 +40,17 @@ from KMS
 group by product_category
 order by [total sales] desc
 ```
-
-
-
+![Picture](https://github.com/user-attachments/assets/92d7293e-f66b-4c76-84b3-38d1909ff485)
+### Question 2
+*What are the Top 3 and Bottom 3 regions in terms of sales?* </br>
+- FOR TOP 3 REGION IN TERM OF SALES
+The SQL query below was executed and visualized as displayed below.
+```
+select top 3 Region, sum(sales) as [Total Sales]
+from KMS
+group by Region
+order by [total sales] desc
+```
 
 
 
