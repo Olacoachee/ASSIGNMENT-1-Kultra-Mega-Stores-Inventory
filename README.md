@@ -47,7 +47,3 @@ order by [total sales] desc
 
 
 
-
-
-
-
