@@ -14,5 +14,16 @@ as shared in the document.
 # 3. Data Source
 The main data used for this assignment was KMS sales data.csv and it was shared with us through the MLS channel using for our DSA Data Analysis Program. 
 # Tools Used
-- microsoft Excel for data cleaning [DOWNLOAD HERE](https://www.microsoft.com/en-us/microsoft-365/excel)
-- SQL Server for querying and analysis [DOWNLOAD HERE](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- microsoft Excel [DOWNLOAD HERE](https://www.microsoft.com/en-us/microsoft-365/excel)
+    - For data cleaning
+    - For data visualization
+- SQL Server [DOWNLOAD HERE](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+    - For data query
+    - for data analysis
+# Data Preparation and Cleaning
+Firstly, to ensure KMS dataset is clean and robust before using, below actions were carried out;
+1. Data loading and inspection
+2. Handling missing values 
+3. Data cleaning and formatting
+## Case Scenario I
+In this stage, Exploratory data analysis (EDA) was carried out by examined the datasets in order to provide answers to all the questions in this Case Scenario I.
