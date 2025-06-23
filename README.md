@@ -31,6 +31,8 @@ In this stage, Exploratory data analysis (EDA) was carried out by examined the d
 This is where carried out some basic lines of code/queries used during the analysis and visualization of data.
 ### Question 1
 *Which product category had the highest sales?*
+
+
 ``` SQL
 SELECT A,B,C
 WHERE A> 45
