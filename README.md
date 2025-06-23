@@ -27,3 +27,22 @@ Firstly, to ensure KMS dataset is clean and robust before using, below actions w
 3. Data cleaning and formatting
 ## Case Scenario I
 In this stage, Exploratory data analysis (EDA) was carried out by examined the datasets in order to provide answers to all the questions in this Case Scenario I.
+## Data Analysis
+This is where carried out some basic lines of code/queries used during the analysis and visualization of data.
+### Question 1
+*Which product category had the highest sales?*
+``` SQL
+SELECT A,B,C
+WHERE A> 45
+```
+
+
+
+
+
+
+
+
+
+
+
