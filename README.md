@@ -165,6 +165,7 @@ Order by
 	purchase_count desc;
 ```
 <img width="377" alt="p6" src="https://github.com/user-attachments/assets/f80e6e88-ecae-4ee1-afdd-c22fde1138e1" />
+
 ### Question 7
 *Which small business customer had the highest sales?* </br>
 This SQL selects the best customer on the small business segment of the KMS table based on the total sales. It rounds the amount of total sales per customer in this segment using SUM(sales), which groups the information in customer name. The results are ranked according to the total sales in descending order picking the highest.
@@ -227,12 +228,16 @@ ORDER BY
 ```
 <img width="120" alt="p9" src="https://github.com/user-attachments/assets/6391121c-3cfa-4434-95b9-1f18a3b0dba2" />
 
+### Question 10
+*Which customer returned items, and what segment do they belong to?* </br>
 
 
 
 
+### Question 11
+*If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer.* </br>
 
-
+**ANSWER:** When shipping methods are always addressed according to order priority (i.e., low-priority orders use economical shipping methods versus high-priority orders use faster shipping methods), this demonstrates an efficient and adequate allocation priority to shipping costs. A mismatch with this alignment may indicate inefficiencies or wastage of resources.
 
 
 
