@@ -114,7 +114,7 @@ ORDER BY
 <img width="692" alt="p4" src="https://github.com/user-attachments/assets/bab548ff-e179-402f-80ff-318e74de9017" />
 
 ### Question 5
-*KMS incurred the most shipping cost using which shipping method?s* </br>
+*KMS incurred the most shipping cost using which shipping method?* </br>
 Value of shipping costs was initially rounded off to 2 decimal places in order to provide precision and consistency at all levels of analysis
 ```
 SELECT * FROM KMS
@@ -133,6 +133,53 @@ Group by
 order by 
 	[Total Shipping Cost] desc
 ```
+![Picture5](https://github.com/user-attachments/assets/b18ffc64-2ba1-4994-9a28-eb7efd2f8b5f)
+## Case Scenario II
+### Question 6
+*Who are the most valuable customers, and what products or services do they typically
+purchase* </br>
+The SQL statement extracts top 10 rows of customers contained in the KMS table with reference to their purchases. It summarizes information in customer_name, product_category and product_sub category. It finds the number of purchases and number of sales of every group. The outcomes are ranked based on customer name and the number of purchases in a decreasing pattern.
+
+```
+Select top 10
+	customer_name,
+	product_category,
+	product_sub_category,
+	count(*) As purchase_count,
+	sum(sales) As [Total Sales]
+from 
+	KMS
+where 
+	customer_name IN (
+Select
+	customer_name
+From
+	KMS
+	)
+Group by 
+	customer_name,
+	product_category,
+	product_sub_category
+Order by 
+	customer_name,
+	purchase_count desc;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
