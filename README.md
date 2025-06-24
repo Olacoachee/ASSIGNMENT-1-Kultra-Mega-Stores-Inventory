@@ -137,7 +137,7 @@ order by
 ## Case Scenario II
 ### Question 6
 *Who are the most valuable customers, and what products or services do they typically
-purchase* </br>
+purchase?* </br>
 The SQL statement extracts top 10 rows of customers contained in the KMS table with reference to their purchases. It summarizes information in customer_name, product_category and product_sub category. It finds the number of purchases and number of sales of every group. The outcomes are ranked based on customer name and the number of purchases in a decreasing pattern.
 
 ```
