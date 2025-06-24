@@ -70,7 +70,7 @@ order by [total sales] asc
 
 ### Question 3
 *What were the total sales of appliances in Ontario?* </br>
-The following SQL query comes up with the total sales of the products belonging to the sub-category 'appliances' in the region of Ontario using the `KMS` table. The expression `SUM` converts all the sales contents as per the requested condition (`product_sub_category = 'appliances'` and `region = 'Ontario'`) and shows it as [Total Sales].
+The following SQL query comes up with the total sales of the products belonging to the sub-category 'appliances' in the region of Ontario using the KMS table. The expression SUM converts all the sales contents as per the requested condition (product_sub_category = 'appliances' and region = 'Ontario') and shows it as [Total Sales].
 ```
 select sum(sales) as [Total Sales]
 from KMS
@@ -110,7 +110,38 @@ GROUP BY
     product_sub_category
 ORDER BY 
     total_sales ASC
-    ```
+```
+<img width="692" alt="p4" src="https://github.com/user-attachments/assets/bab548ff-e179-402f-80ff-318e74de9017" />
+
+### Question 5
+*KMS incurred the most shipping cost using which shipping method?s* </br>
+Value of shipping costs was initially rounded off to 2 decimal places in order to provide precision and consistency at all levels of analysis
+```
+SELECT * FROM KMS
+alter table KMS
+alter column shipping_cost decimal(10,2)
+```
+This SQL query performed a calculation of the total shipping cost using shipping mode in KMS table. It aggregates its data on the basis of the column ship_mode and aggregates shipping price using SUM. The output is then arranged in the order of increasing number of shipping cost with only the first row of the data being chosen.
+```
+select top 1
+	ship_mode,
+	sum(shipping_cost) As [Total Shipping Cost]
+from 
+	KMS
+Group by
+	ship_mode
+order by 
+	[Total Shipping Cost] desc
+```
+
+
+
+
+
+
+
+
+
 
 
 
