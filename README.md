@@ -68,9 +68,49 @@ order by [total sales] asc
 ```
 ![Picture2b](https://github.com/user-attachments/assets/a9dcb4c9-a1af-44f0-8123-6b838a967884)
 
+### Question 3
+*What were the total sales of appliances in Ontario?* </br>
+The following SQL query comes up with the total sales of the products belonging to the sub-category 'appliances' in the region of Ontario using the `KMS` table. The expression `SUM` converts all the sales contents as per the requested condition (`product_sub_category = 'appliances'` and `region = 'Ontario'`) and shows it as [Total Sales].
+```
+select sum(sales) as [Total Sales]
+from KMS
+where product_sub_category = 'appliances'
+and region = 'ontario';
+```
+Total Sales = 202346.84
 
+### Question 4
+*Advise the management of KMS on what to do to increase the revenue from the bottom
+10 customers* </br>
+When recommending what KMS can do to increase their sales volume among the bottom 10 customers, various aspects such as order quantity, province, region, customer segment, product category and product sub-category were examined. In the analysis, it was realized that as much as some of these customers were geographically dispersed, their orders were solely done once with the core of the orders being related to office supplies. They were also primarily in the small businesses and corporate segments of customer see SLQ query below.
+To tackle this, KMS is advised to:
+**Improve customer engagement:** Establish better relationships by engaging with customers in a personalized way, and by using follow-ups.
+**Provide targeted discounts:** Offer targeted discounts in the defence category of office supplies to encourage another buy.
+**Encourage credit facilities:** Provide convenient payment schemes to the small businesses, as well as corporate clients.
+**Customer survey:**  Conduct customer surveys to define and eliminate certain pain points in order to increase the level of meeting customer needs and expectations.
 
-
+```
+SELECT top 10
+   customer_name, 
+    SUM(sales) AS total_sales,
+	SUM(order_quantity) AS total_order_quantity,
+    province, 
+    region, 
+    customer_segment, 
+    product_category, 
+    product_sub_category
+FROM 
+	KMS
+GROUP BY 
+    customer_name,
+	province, 
+    region, 
+    customer_segment, 
+    product_category, 
+    product_sub_category
+ORDER BY 
+    total_sales ASC
+    ```
 
 
 
