@@ -201,6 +201,31 @@ Group by
 order by
 	[Total Orders] desc
 ```
+![Picture8](https://github.com/user-attachments/assets/535d0d02-b683-469b-981f-869539b58b51)
+
+### Question 9
+*Which consumer customer was the most profitable one?* </br>
+The profit values were rounded to two decimal places first, to avoid rounding errors and be consistently rounded through the analysis. This is an important step in ensuring accurate outcomes and eliminating calculation and reporting discrepancies.
+```
+SELECT * FROM KMS
+alter table KMS
+alter column profit decimal(10,2)
+```
+This SQL query identifies the most profitable customer in the consumer segment of the KMS table. It groups data by customer_name and calculates the total profit for each customer using SUM(Profit). Results are sorted in descending order of total profit, and the top record with the highest profit is selected.
+```
+select top 1
+	customer_name,
+	SUM(Profit) AS [Total Profit]
+FROM
+	KMS
+WHERE
+	customer_segment = 'consumer'
+GROUP BY
+	customer_name
+ORDER BY 
+	[Total Profit] DESC
+```
+
 
 
 
