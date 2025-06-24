@@ -182,10 +182,25 @@ Group by
 order by
 	[Total Sales] desc
 ```
+<img width="143" alt="p7" src="https://github.com/user-attachments/assets/cd9fc3cf-e5b3-48b0-9e2f-1292b01db33a" />
 
-
-
-
+### Question 8
+*Which Corporate Customer placed the most number of orders in 2009 – 2012?* </br>
+This SQL query represents a name of the most frequent customer of the Corporate segment of the KMS table who ordered more during the period between January 1, 2009, and December 31, 2012. It splits data by customer_name, the order count takes count of how many orders the customers have (order_ID), and it returns the records in decreasing order of the total amount of orders and the top one is taken.
+```
+select TOP 1
+	customer_name,
+	COUNT(order_ID) As [Total Orders]
+From 
+	KMS
+Where
+	customer_segment = 'Corporate'
+	AND order_date BETWEEN '2009-01-01' AND '2012-12-31'
+Group by 
+	customer_name
+order by
+	[Total Orders] desc
+```
 
 
 
