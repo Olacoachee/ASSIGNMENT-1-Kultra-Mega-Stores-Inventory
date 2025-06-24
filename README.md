@@ -164,11 +164,24 @@ Order by
 	customer_name,
 	purchase_count desc;
 ```
+<img width="377" alt="p6" src="https://github.com/user-attachments/assets/f80e6e88-ecae-4ee1-afdd-c22fde1138e1" />
+### Question 7
+*Which small business customer had the highest sales?* </br>
+This SQL selects the best customer on the small business segment of the KMS table based on the total sales. It rounds the amount of total sales per customer in this segment using SUM(sales), which groups the information in customer name. The results are ranked according to the total sales in descending order picking the highest.
 
-
-
-
-
+```
+select TOP 1
+	customer_name,
+	sum(sales) As [Total Sales]
+From 
+	KMS
+Where
+	customer_segment = 'small business'
+Group by 
+	customer_name
+order by
+	[Total Sales] desc
+```
 
 
 
