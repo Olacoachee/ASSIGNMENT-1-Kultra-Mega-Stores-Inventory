@@ -225,7 +225,7 @@ GROUP BY
 ORDER BY 
 	[Total Profit] DESC
 ```
-
+<img width="120" alt="p9" src="https://github.com/user-attachments/assets/6391121c-3cfa-4434-95b9-1f18a3b0dba2" />
 
 
 
