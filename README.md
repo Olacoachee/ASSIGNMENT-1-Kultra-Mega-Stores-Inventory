@@ -66,7 +66,7 @@ from KMS
 group by Region
 order by [total sales] asc
 ```
-![Picture2b](https://github.com/user-attachments/assets/a9dcb4c9-a1af-44f0-8123-6b838a967884)
+
 
 ### Question 3
 *What were the total sales of appliances in Ontario?* </br>
