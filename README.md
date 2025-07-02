@@ -284,6 +284,25 @@ ORDER BY
 ### Question 11
 *If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer.* </br>
 
+In order to determine whether Kultra Mega Stores (KMS) arranged the shipping costs in compliance with Order Priority, there is a need to examine the use of shipping methods by various order priorities and whether high-priority orders employed faster/more costly options and low-priority ones slower/cheaper ones.
+**Query: Shipping Method vs Order Priority**
+```
+SELECT 
+    order_priority, 
+    ship_mode, 
+    COUNT(order_id) AS total_orders, 
+    SUM(shipping_cost) AS [total shipping cost]
+	FROM 
+    KMS
+GROUP BY 
+    order_priority, 
+    ship_mode
+ORDER BY 
+    order_priority, 
+    [total shipping cost]DESC;
+```
+
+
 **ANSWER:** When shipping methods are always addressed according to order priority (i.e., low-priority orders use economical shipping methods versus high-priority orders use faster shipping methods), this demonstrates an efficient and adequate allocation priority to shipping costs. A mismatch with this alignment may indicate inefficiencies or wastage of resources.
 
 
