@@ -230,6 +230,55 @@ ORDER BY
 
 ### Question 10
 *Which customer returned items, and what segment do they belong to?* </br>
+The very first step is we need to combine the two table (the KMS employee table with Order Status table so that we can join which customers returned item and what segment does this customers belong to on a view table called VW_KMS_tbl. the query below represents the new table.
+```
+create view  VW_KMS_tbl
+as
+SELECT 
+KMS.Row_ID,
+[Order Status].Order_ID,
+[Order Status].Status,
+KMS.ORDER_DATE,
+KMS.ORDER_PRIORITY,
+KMS.ORDER_QUANTITY,
+KMS.SALES,
+KMS.DISCOUNT,
+KMS.SHIP_MODE,
+KMS.PROFIT,
+KMS.UNIT_PRICE,
+KMS.SHIPPING_COST,
+KMS.CUSTOMER_NAME,
+KMS.PROVINCE,
+KMS.REGION,
+KMS.CUSTOMER_SEGMENT,
+KMS.PRODUCT_CATEGORY,
+KMS.PRODUCT_SUB_CATEGORY,
+KMS.PRODUCT_NAME,
+KMS.PRODUCT_CONTAINER,
+KMS.PRODUCT_BASE_MARGIN,
+KMS.SHIP_DATE
+FROM
+[Order Status]
+RIGHT JOIN KMS
+ON
+KMS.ORDER_ID = [Order Status].Order_ID
+```
+After joining the two tables the next step is to determine which customers returned items as well as the regions do they belong. An SQL query as queried below show the top 10 customers, customer segments, and total returns in descending order.
+```
+SELECT TOP 10
+	customer_name,
+	customer_segment,
+	COUNT(order_ID) AS [Total_Returns]
+FROM
+	VW_KMS_tbl
+WHERE
+	Status = 'returned'
+GROUP BY
+	customer_name,
+	customer_segment
+ORDER BY
+	[Total_Returns] desc;
+```
 
 
 
