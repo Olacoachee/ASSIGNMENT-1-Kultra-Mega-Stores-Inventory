@@ -301,7 +301,7 @@ ORDER BY
     order_priority, 
     [total shipping cost]DESC;
 ```
-
+<img width="343" alt="P11" src="https://github.com/user-attachments/assets/e9435ddc-1447-4e29-89d0-0a91a0db4427" />
 
 **ANSWER:** When shipping methods are always addressed according to order priority (i.e., low-priority orders use economical shipping methods versus high-priority orders use faster shipping methods), this demonstrates an efficient and adequate allocation priority to shipping costs. A mismatch with this alignment may indicate inefficiencies or wastage of resources.
 
