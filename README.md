@@ -279,9 +279,7 @@ GROUP BY
 ORDER BY
 	[Total_Returns] desc;
 ```
-
-
-
+<img width="254" alt="p10" src="https://github.com/user-attachments/assets/3997c3c4-e133-4d62-93f2-0b056c5d322d" />
 
 ### Question 11
 *If the delivery truck is the most economical but the slowest shipping method and Express Air is the fastest but the most expensive one, do you think the company appropriately spent shipping costs based on the Order Priority? Explain your answer.* </br>
